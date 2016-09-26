@@ -1,20 +1,16 @@
 'use strict';
 
-//testing alert
-var getBox = function(arg) {
-  return function() {
-    alert(arg.id);
-  };
-};
+//Put X in the box that is clicked
+function setBox(){
+    this.innerHTML = "<p class='lg-x'> x <p>";
+}
 
 //get boxes (td)
 var boxes = document.getElementsByClassName("box");
 
-
+//check for boxes that get clicked
 for (var i = 0, l = boxes.length; l > i; i++){
     //when box is click use getBox function to output td id
-    boxes[i].onclick = getBox(boxes[i]);
+    boxes[i].onclick = setBox;
 }
   
-  
- 

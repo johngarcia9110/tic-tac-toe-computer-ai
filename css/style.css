@@ -9,8 +9,13 @@ td{
   background-color: lightgray;
   width: 33.33%;
   height: 33.33%;
+  text-align: center;
 }
 
 td:hover{
   background: gray;
+}
+
+.lg-x{
+  font-size: 40px;
 }
