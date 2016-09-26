@@ -1,13 +1,16 @@
+
 table{
   background-color: slategray;
   width: 600px;
   height: 600px;
 }
+
 td{
   background-color: lightgray;
   width: 33.33%;
   height: 33.33%;
 }
+
 td:hover{
   background: gray;
 }
