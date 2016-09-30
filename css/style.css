@@ -1,21 +1,75 @@
-
-table{
-  background-color: slategray;
-  width: 600px;
-  height: 600px;
+html, body{
+  margin: 0;
+  padding: 0;
+  background: #111111;
+  font-size: 1.5vh;
 }
 
-td{
-  background-color: lightgray;
-  width: 33.33%;
-  height: 33.33%;
+#main{
+  margin: 0;
+  padding: 0;
+  padding-top: 25vh;
+  height: auto;
+  width: 100%;
+}
+
+#board{
+  padding: 0;
+  margin: auto;
+  width: 33vh;
+  height: 33vh;
+}
+
+.box{
+  padding: 0;
+  margin: 0.5vh;
+  height: 10vh;
+  width: 10vh;
+  border-radius: 5px;
+  background: #FFFFFF;
+  cursor: pointer;
+  float: left;
+}
+
+.box:hover{
+  animation-name: glow;
+  animation-duration: 400ms;
+  animation-fill-mode: forwards;
+}
+
+@keyframes glow{
+  0%{
+  }
+  100%{
+    box-shadow: 0px 0px 12px 0px #48f17c;
+  }
+}
+
+.button{
+  float: left;
+  width: 48%;
+  height: 3vh;S
+  line-height: 3vh;
+  color: #FFFFFF;
+  font-size: 20px;
   text-align: center;
+  margin: 1%;
+  background-color: #333333;
+  border-radius: 5px;
+  cursor: pointer;
 }
 
-td:hover{
-  background: gray;
+.button:hover{
+  animation-name: depress;
+  animation-duration: 200ms;
+  animation-fill-mode: forwards;
 }
 
-.lg-x{
-  font-size: 40px;
+@keyframes depress {
+  0%{
+    transform: scale(1);
+  }
+  100%{
+    transform: scale(.9);
+  }
 }

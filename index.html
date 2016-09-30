@@ -8,24 +8,20 @@
 </head>
 
 <body>
-    <div class="board">
-        <table>
-            <tr>
-                <td class="box lg-x" id="a1"></td>
-                <td class="box lg-x" id="a2"></td>
-                <td class="box lg-x" id="a3"></td>
-            </tr>
-            <tr>
-                <td class="box lg-x" id="b1"></td>
-                <td class="box lg-x" id="b2"></td>
-                <td class="box lg-x" id="b3"></td>
-            </tr>
-            <tr>
-                <td class="box lg-x" id="c1"></td>
-                <td class="box lg-x" id="c2"></td>
-                <td class="box lg-x" id="c3"></td>
-            </tr>
-        </table>
+    <div id="main">
+        <div id="board">
+            <div class="box lg-x" onclick="claim(this)"></div>
+            <div class="box lg-x" onclick="claim(this)"></div>
+            <div class="box lg-x" onclick="claim(this)"></div>
+            <div class="box lg-x" onclick="claim(this)"></div>
+            <div class="box lg-x" onclick="claim(this)"></div>
+            <div class="box lg-x" onclick="claim(this)"></div>
+            <div class="box lg-x" onclick="claim(this)"></div>
+            <div class="box lg-x" onclick="claim(this)"></div>
+            <div class="box lg-x" onclick="claim(this)"></div>
+            <div class="button">AI</div>
+            <div class="button">Reset</div>
+        </div>
     </div>
 </body>
 <script src="js/main.js"></script>
