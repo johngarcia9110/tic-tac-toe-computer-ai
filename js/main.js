@@ -1,4 +1,4 @@
-'use strict';
+
 
 var boxes = document.getElementsByClassName('box');
 var buttons = document.getElementsByClassName('button');
@@ -23,7 +23,7 @@ var wins = [
     [2, 4, 6]
     ];
 
-
+//called from (html div)
 function reset(){
     
     //set board state back to 0
@@ -40,6 +40,7 @@ function reset(){
     game = true;
 }
 
+//called when div clicked (see html for call function on click)
 function claim( clicked ){
     
     //if there is no game, just return
@@ -50,7 +51,7 @@ function claim( clicked ){
     for( var i = 0; i < 9; i++ ){
         
         //check if the box clicked is a valid move to make
-        if(boxes[i] === clicked && bstate[i] === 0){
+        if(boxes[i] == clicked && bstate[i] == 0){
             
             set(i, HUMAN);
             callAI();
@@ -65,7 +66,7 @@ function set( index, player ){
     }
     
     //if move is valid
-    if( bstate[index] === 0 ){
+    if( bstate[index] == 0 ){
         
         //hide the AI button
         buttons[0].style.display = 'none';
@@ -108,7 +109,6 @@ function checkWin( board, player ){
             
             if( board[wins[i][x]] != value ){
                 
-                console.log('this' + board[wins[i][x]]);
                 
                 win = false;
                 break;
@@ -117,7 +117,7 @@ function checkWin( board, player ){
         }
         
         if( win ){
-            console.log('win detected true');
+            //console.log('win detected true');
             return true;
         }
         
@@ -128,39 +128,37 @@ function checkWin( board, player ){
 }
 
 function checkFull(board){
-    
+
     for( var i = 0; i < 9; i++ ){
         
-        if( board[i] === 0 ){
+        if( board[i] == 0 ){
             
             return false;
             
         }
-        
-        return true;
     }
+    return true;
     
 }
 
 function callAI(){
     
-    aiTurn( bstate, 0, AI );
+    aiTurn( bstate, 0, AI);
     
 }
 
-function aiTurn( board, depth, player ){
-    console.log("aiturn called");
+function aiTurn( board, depth, player){
     
     if( checkWin(board, !player) ){
-        console.log('computer lost');
+      
         return -10 + depth;
-        
+
     }
     
     if(checkFull( board )){
-        console.log(board);
+
         return 0;
-        
+
     }
     
     var value = player == HUMAN ? HVAL : AVAL;
@@ -170,14 +168,14 @@ function aiTurn( board, depth, player ){
     
     for( var i = 0; i < 9; i++ ){
         
-        if(board[i] === 0){
+        if(board[i] == 0){
             
-            var newBoard = board.splice();
+            var newBoard = board.slice();
             
             newBoard[i] = value;
             
-            var moveVal = aiTurn( newBoard, depth + 1, !player );
-            
+            var moveVal = -aiTurn( newBoard, depth + 1, !player);
+
             if(moveVal > max){
                 
                 max = moveVal;
@@ -190,8 +188,8 @@ function aiTurn( board, depth, player ){
         
     }
     
-    if( depth === 0 ){
-        
+    if( player == AI && depth == 0){
+
         set(index, AI);
         
     }
