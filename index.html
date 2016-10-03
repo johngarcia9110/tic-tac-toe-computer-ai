@@ -10,6 +10,9 @@
 <body>
     <div id="main">
         <div id="board">
+            <div class="title">
+               <h1 id="title">Tic Tac Toe</h1> 
+            </div>
             <div class="box lg-x" onclick="claim(this)"></div>
             <div class="box lg-x" onclick="claim(this)"></div>
             <div class="box lg-x" onclick="claim(this)"></div>
@@ -19,8 +22,10 @@
             <div class="box lg-x" onclick="claim(this)"></div>
             <div class="box lg-x" onclick="claim(this)"></div>
             <div class="box lg-x" onclick="claim(this)"></div>
-            <div class="button" onclick="callAI()">AI</div>
-            <div class="button" onclick="reset()">Reset</div>
+            <div class="controls">
+                <div class="button" onclick="callAI()">AI</div>
+                <div class="button" onclick="reset()">Reset</div>
+            </div>
         </div>
     </div>
 </body>

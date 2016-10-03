@@ -29,6 +29,7 @@ function reset(){
     //set board state back to 0
     for( var i = 0; i < 9; i++ ){
         boxes[i].style.background = "#FFFFFF";
+        boxes[i].innerHTML = "";
         bstate[i] = 0;
     }
     
@@ -74,20 +75,24 @@ function set( index, player ){
         if( player === HUMAN ){
             
             //claim box for human player
-            boxes[index].style.background = "#22f";
+            boxes[index].style.background = "transparent";
+            boxes[index].style.color = "#22f";
+            boxes[index].innerHTML = "X";
             bstate[index] = HVAL;
         
         }else{
             
             //claim box for AI
-            boxes[index].style.background = "#f22";
+            boxes[index].style.background = "transparent";
+            boxes[index].style.color = "#f22";
+            boxes[index].innerHTML = "O"
             bstate[index] = AVAL;
             
         }
         
         //check if the move we made resulted in a win
         if( checkWin( bstate, player ) ){
-            
+            document.getElementById('title').innerHTML = player + " wins!"
             game = false;
             
         }
@@ -117,7 +122,7 @@ function checkWin( board, player ){
         }
         
         if( win ){
-            //console.log('win detected true');
+            
             return true;
         }
         

@@ -20,6 +20,13 @@ html, body{
   height: 33vh;
 }
 
+#board .title{
+  text-align: center;
+  color: #FFFFFF;
+  font-family: arial;
+  font-size: 2vh;
+}
+
 .box{
   padding: 0;
   margin: 0.5vh;
@@ -28,7 +35,13 @@ html, body{
   border-radius: 5px;
   background: #FFFFFF;
   cursor: pointer;
+  font-family: Arial;
   float: left;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 10vh;
+  color: #22f;
 }
 
 .box:hover{
@@ -49,28 +62,37 @@ html, body{
 .button{
   float: left;
   width: 48%;
-  height: 3vh;
-  line-height: 3vh;
+  /*height: 3vh;*/
+  /*line-height: 3vh;*/
   color: #FFFFFF;
   font-size: 20px;
   text-align: center;
-  margin: 5% 1%;
   background-color: #333333;
   border-radius: 5px;
   cursor: pointer;
+  margin: 1%;
 }
 
-.button:hover{
-  animation-name: depress;
-  animation-duration: 200ms;
-  animation-fill-mode: forwards;
-}
+/*.button:hover{*/
+/*  animation-name: depress;*/
+/*  animation-duration: 200ms;*/
+/*  animation-fill-mode: forwards;*/
+/*}*/
 
-@keyframes depress {
-  0%{
-    transform: scale(1);
-  }
-  100%{
-    transform: scale(.9);
-  }
+/*@keyframes depress {*/
+/*  0%{*/
+/*    transform: scale(1);*/
+/*  }*/
+/*  100%{*/
+/*    transform: scale(.9);*/
+/*  }*/
+/*}*/
+
+.controls{
+  display: block;
+  background-color: white;
+  float: left;
+  width: 100%;
+  border-radius: 5px;
+  margin-top: 20px;
 }
